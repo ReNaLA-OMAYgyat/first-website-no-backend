@@ -1,0 +1,163 @@
+.contact-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.icon-link {
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Email - glow effect */
+.icon-link.email:hover {
+  color: #ffde59;
+  text-shadow: 0 0 10px #ffde59, 0 0 20px #ffde59;
+  transform: scale(1.2);
+}
+
+/* WhatsApp - bounce effect */
+.icon-link.whatsapp:hover {
+  animation: bounce 0.6s;
+  color: #25d366;
+}
+
+/* Instagram - glowing pink shadow */
+.icon-link.instagram:hover {
+  color: #e1306c;
+  text-shadow: 0 0 12px #e1306c, 0 0 22px #e1306c;
+  transform: scale(1.15);
+}
+
+/* LinkedIn - pulse blue effect */
+.icon-link.linkedin:hover {
+  color: #0e76a8;
+  animation: pulse 1s infinite;
+}
+
+/* Bounce Keyframes */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Pulse Keyframes */
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 0 #0e76a8;
+  }
+  50% {
+    text-shadow: 0 0 10px #0e76a8;
+  }
+  100% {
+    text-shadow: 0 0 0 #0e76a8;
+  }
+}
+
+/* Social Media Links */
+.social-link {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg;
+}
+
+/* Form Input Focus Effects */
+input:focus,
+textarea:focus {
+  @apply outline-none;
+}
+
+/* Hover Effects for Contact Info Icons */
+.bg-blue-100,
+.bg-green-100,
+.bg-red-100 {
+  @apply transition-all duration-300;
+}
+
+.bg-blue-100:hover {
+  @apply bg-blue-200 transform scale-110;
+}
+
+.bg-green-100:hover {
+  @apply bg-green-200 transform scale-110;
+}
+
+.bg-red-100:hover {
+  @apply bg-red-200 transform scale-110;
+}
+
+/* Button Animation */
+button[type="submit"] {
+  @apply relative overflow-hidden;
+}
+
+button[type="submit"]::after {
+  content: "";
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+button[type="submit"]:hover::after {
+  @apply opacity-20;
+}
+
+/* Card Hover Effects */
+.bg-white.rounded-2xl {
+  @apply transition-all duration-300;
+}
+
+.bg-white.rounded-2xl:hover {
+  @apply transform -translate-y-1 shadow-2xl;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grid {
+    @apply gap-8;
+  }
+
+  .social-link {
+    @apply w-10 h-10;
+  }
+}
+
+/* Loading Animation for Form Submission */
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  @apply relative;
+}
+
+.loading::after {
+  content: "";
+  @apply absolute inset-0 border-4 border-blue-600 border-t-transparent rounded-full animate-spin;
+}
+
+/* Success Message Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.success-message {
+  @apply fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg;
+  animation: slideIn 0.3s ease-out;
+}

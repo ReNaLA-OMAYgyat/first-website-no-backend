@@ -1,0 +1,314 @@
+@keyframes glow-flicker {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px #facc15) drop-shadow(0 0 25px #facc15);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #facc15) drop-shadow(0 0 15px #facc15);
+  }
+}
+
+.drop-shadow-glow {
+  animation: glow-flicker 2s infinite ease-in-out;
+}
+@keyframes fire-flicker {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px #f97316) drop-shadow(0 0 15px #fb923c);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px #f97316) drop-shadow(0 0 25px #f87171);
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
+.animate-fire-flicker {
+  animation: fire-flicker 1.5s infinite ease-in-out;
+}
+@keyframes fire-burst {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px #ef4444) drop-shadow(0 0 16px #f87171);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 14px #dc2626) drop-shadow(0 0 24px #fb7185);
+    transform: scale(1.1) rotate(2deg);
+  }
+}
+
+.animate-fire-flicker {
+  animation: fire-flicker 1.3s infinite ease-in-out;
+}
+
+.animate-fire-burst {
+  animation: fire-burst 1s infinite ease-in-out;
+}
+/* Aura belakang */
+.aura-adi {
+  filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.8))
+    drop-shadow(0 0 25px rgba(14, 165, 233, 0.6));
+  transform-origin: center;
+}
+
+/* Animasi scaling aura */
+.aura-adi.scale-in {
+  animation: scaleIn 0.5s forwards;
+}
+
+.aura-adi.scale-out {
+  animation: scaleOut 0.5s forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Partikel pulsing */
+.particle-adi {
+  animation: pulseGlow 3s infinite;
+  box-shadow: 0 0 15px 3px rgba(14, 165, 233, 0.8);
+}
+
+.particle-adi:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.particle-adi:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+    box-shadow: 0 0 15px 3px rgba(14, 165, 233, 0.8);
+    box-shadow: 0 0 10px 2px rgba(14, 165, 233, 0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+    box-shadow: 0 0 20px 5px rgba(14, 165, 233, 1);
+  }
+}
+.flower-petal {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 1px rgba(255, 182, 193, 0.6);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 3s ease;
+}
+.cosmic-bg::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(138, 43, 226, 0.3),
+    transparent 70%
+  );
+  animation: rotateAura 12s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+@keyframes rotateAura {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.farel-container {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+}
+
+.farel-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.farel-fire {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 165, 0, 0.8) 0%,
+    rgba(255, 69, 0, 0.4) 50%,
+    transparent 70%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.farel-container:hover .farel-fire {
+  opacity: 1;
+}
+
+.fire-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.fire-particles::before,
+.fire-particles::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff4500;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.farel-container:hover .fire-particles::before {
+  animation: particleFloat 1s ease-in-out infinite;
+  left: 20%;
+  top: 20%;
+}
+
+.farel-container:hover .fire-particles::after {
+  animation: particleFloat 1.2s ease-in-out infinite;
+  right: 20%;
+  bottom: 20%;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Adi's Aura Effect */
+.aura-adi {
+  transition: all 0.5s ease;
+}
+
+.scale-out {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.particle-adi {
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+/* Nilam's Glow Effect */
+.nilam-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(138, 43, 226, 0.4) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* Tasya's Diamond Effect */
+.diamond {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8a2be2, #4b0082);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* Drop shadow for lightbulb */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.5));
+}
+
+/* Cosmic background for Tasya */
+.cosmic-bg {
+  background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+  background-size: 200% 200%;
+  animation: cosmicGradient 5s ease infinite;
+}
+
+@keyframes cosmicGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animations */
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.farel-name {
+  margin-top: 0.3rem;
+  font-weight: 600;
+  color: #ff4500;
+  font-family: "Arial", sans-serif;
+}

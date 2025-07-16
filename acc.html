@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>laptop</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo/Brand -->
+          <div class="flex-shrink-0">
+            <a
+              href="#"
+              class="text-xl font-bold text-gray-800 transition duration-200 hover:underline hover:scale-105 inline-block"
+            >
+              ElecTroShop
+            </a>
+          </div>
+          <!-- Search Bar (Center) -->
+          <div class="flex-1 flex justify-center px-4">
+            <form class="w-full max-w-md">
+              <div class="relative">
+                <input
+                  type="text"
+                  class="w-full border border-gray-300 rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Cari produk..."
+                  aria-label="Search"
+                />
+                <button
+                  type="submit"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-4">
+              <a
+                href="index.html"
+                class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 hover:underline hover:scale-105 inline-block"
+              >
+                Home
+              </a>
+              <a
+                href="about.html"
+                class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 hover:underline hover:scale-105 inline-block"
+              >
+                About
+              </a>
+              <a
+                href="blog.html"
+                class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 hover:underline hover:scale-105 inline-block"
+              >
+                Blog
+              </a>
+              <a
+                href="contact.html"
+                class="text-gray-800 hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 hover:underline hover:scale-105 inline-block"
+              >
+                Contact
+              </a>
+              <!-- Shopping Cart -->
+              <a
+                href="#"
+                class="relative text-gray-800 hover:text-gray-600 transition duration-200 hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span
+                  id="cartCount"
+                  class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                >
+                  0
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600 transition duration-200 hover:scale-110"
+              aria-label="Toggle menu"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="index.html"
+            class="text-gray-800 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium transition duration-200 hover:underline hover:scale-105"
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            class="text-gray-800 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium transition duration-200 hover:underline hover:scale-105"
+          >
+            About
+          </a>
+          <a
+            href="#"
+            class="text-gray-800 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium transition duration-200 hover:underline hover:scale-105"
+          >
+            Services
+          </a>
+          <a
+            href="#"
+            class="text-gray-800 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium transition duration-200 hover:underline hover:scale-105"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="min-h-screen py-10 px-4 sm:px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <!-- HEADER -->
+        <div class="mb-8 text-center" style="margin-top: 6rem">
+          <h1
+            class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          >
+            Temukan Produk Terbaik
+          </h1>
+          <p class="text-gray-500 mt-2 text-lg">
+            Belanja nyaman, cepat, dan terjangkau kapan pun kamu mau.
+          </p>
+        </div>
+
+        <!-- GRID PRODUK -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="relative aspect-[4/3]">
+              <img
+                class="w-full h-full object-cover"
+                src="headphone1.jpg"
+                alt="Sony WH-1000XM5"
+              />
+              <div class="absolute top-2 left-2">
+                <span
+                  class="px-2 py-1 bg-red-500 text-white text-xs rounded-full"
+                  >Sale</span
+                >
+              </div>
+              <div class="absolute top-2 right-2">
+                <button
+                  class="p-2 bg-white rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-500 text-sm ml-2">(4.9)</span>
+              </div>
+              <h2 class="text-lg font-semibold text-gray-800 truncate">
+                Sony WH-1000XM5
+              </h2>
+              <p class="text-sm text-gray-500 mt-1 line-clamp-2">
+                Premium Noise Cancelling Headphones
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-green-600"
+                    >Rp4.999.000</span
+                  >
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >Rp5.999.000</span
+                  >
+                </div>
+                <div class="flex gap-2">
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Tambah
+                  </a>
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Beli
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="relative aspect-[4/3]">
+              <img
+                class="w-full h-full object-cover"
+                src="speaker1.jpg"
+                alt="JBL PartyBox 310"
+              />
+              <div class="absolute top-2 left-2">
+                <span
+                  class="px-2 py-1 bg-green-500 text-white text-xs rounded-full"
+                  >Baru</span
+                >
+              </div>
+              <div class="absolute top-2 right-2">
+                <button
+                  class="p-2 bg-white rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="text-gray-500 text-sm ml-2">(4.7)</span>
+              </div>
+              <h2 class="text-lg font-semibold text-gray-800 truncate">
+                JBL PartyBox 310
+              </h2>
+              <p class="text-sm text-gray-500 mt-1 line-clamp-2">
+                Portable Bluetooth Party Speaker
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-green-600"
+                    >Rp6.999.000</span
+                  >
+                </div>
+                <div class="flex gap-2">
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Tambah
+                  </a>
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Beli
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="relative aspect-[4/3]">
+              <img
+                class="w-full h-full object-cover"
+                src="earbuds1.jpg"
+                alt="Apple AirPods Pro 2"
+              />
+              <div class="absolute top-2 left-2">
+                <span
+                  class="px-2 py-1 bg-blue-500 text-white text-xs rounded-full"
+                  >Best Seller</span
+                >
+              </div>
+              <div class="absolute top-2 right-2">
+                <button
+                  class="p-2 bg-white rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="text-gray-500 text-sm ml-2">(4.2)</span>
+              </div>
+              <h2 class="text-lg font-semibold text-gray-800 truncate">
+                Apple AirPods Pro 2
+              </h2>
+              <p class="text-sm text-gray-500 mt-1 line-clamp-2">
+                Active Noise Cancellation Earbuds
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-green-600"
+                    >Rp3.999.000</span
+                  >
+                </div>
+                <div class="flex gap-2">
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Tambah
+                  </a>
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Beli
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="relative aspect-[4/3]">
+              <img
+                class="w-full h-full object-cover"
+                src="soundbar1.jpg"
+                alt="Samsung HW-Q990C"
+              />
+              <div class="absolute top-2 left-2">
+                <span
+                  class="px-2 py-1 bg-yellow-500 text-white text-xs rounded-full"
+                  >Promo</span
+                >
+              </div>
+              <div class="absolute top-2 right-2">
+                <button
+                  class="p-2 bg-white rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="text-gray-500 text-sm ml-2">(3.8)</span>
+              </div>
+              <h2 class="text-lg font-semibold text-gray-800 truncate">
+                Samsung HW-Q990C
+              </h2>
+              <p class="text-sm text-gray-500 mt-1 line-clamp-2">
+                11.1.4ch Dolby Atmos Soundbar
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-green-600"
+                    >Rp12.999.000</span
+                  >
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >Rp14.999.000</span
+                  >
+                </div>
+                <div class="flex gap-2">
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Tambah
+                  </a>
+                  <a
+                    href="pembelian.html"
+                    class="px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 text-sm transition-colors flex items-center justify-center"
+                  >
+                    Beli
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">ElecTroShop</h3>
+            <p class="text-gray-400">
+              Temukan berbagai produk elektronik terbaik dengan harga
+              terjangkau.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kategori</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Laptop</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Smartphone</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Aksesoris</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Gadget</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Bantuan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cara Belanja</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Pengiriman</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Pembayaran</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-400">
+                <i class="fas fa-phone mr-2"></i> +62 812-3456-7890
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i class="fas fa-envelope mr-2"></i> info@electroshop.com
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+              </li>
+            </ul>
+            <div class="mt-4 flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2024 ElecTroShop. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Add this before closing body tag -->
+    <script>
+      // Inisialisasi cart count
+      let cartCount = 0;
+      const cartCountElement = document.getElementById("cartCount");
+
+      // Fungsi untuk menambah item ke keranjang
+      function addToCart(button) {
+        // Tambah counter
+        cartCount++;
+        cartCountElement.textContent = cartCount;
+
+        // Animasi feedback
+        button.innerHTML = "Ditambahkan ✓";
+        button.classList.remove("bg-blue-600", "hover:bg-blue-700");
+        button.classList.add("bg-green-600", "hover:bg-green-700");
+
+        // Reset button setelah 1.5 detik
+        setTimeout(() => {
+          button.innerHTML = "Tambah";
+          button.classList.remove("bg-green-600", "hover:bg-green-700");
+          button.classList.add("bg-blue-600", "hover:bg-blue-700");
+        }, 1500);
+
+        // Tambahkan animasi pada cart icon
+        const cartIcon = document.querySelector('a[href="#"] svg');
+        cartIcon.classList.add("animate-bounce");
+        setTimeout(() => {
+          cartIcon.classList.remove("animate-bounce");
+        }, 1000);
+      }
+
+      // Fungsi untuk membeli item
+      function buyItem(button) {
+        // Animasi feedback
+        button.innerHTML = "Diproses...";
+        button.classList.remove("bg-green-600", "hover:bg-green-700");
+        button.classList.add("bg-yellow-600", "hover:bg-yellow-700");
+        button.disabled = true;
+
+        // Simulasi proses pembelian
+        setTimeout(() => {
+          button.innerHTML = "Berhasil!";
+          button.classList.remove("bg-yellow-600", "hover:bg-yellow-700");
+          button.classList.add("bg-green-600", "hover:bg-green-700");
+
+          // Reset button setelah 1.5 detik
+          setTimeout(() => {
+            button.innerHTML = "Beli";
+            button.classList.remove("bg-green-600", "hover:bg-green-700");
+            button.classList.add("bg-green-600", "hover:bg-green-700");
+            button.disabled = false;
+          }, 1500);
+        }, 1000);
+      }
+
+      // Tambahkan event listener ke semua tombol
+      document.querySelectorAll("button").forEach((button) => {
+        if (button.textContent.trim() === "Tambah") {
+          button.addEventListener("click", () => addToCart(button));
+        } else if (button.textContent.trim() === "Beli") {
+          button.addEventListener("click", () => buyItem(button));
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konfirmasi Pembayaran</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f6f8fb 0%, #f1f4f9 100%);
+      }
+      .success-icon {
+        animation: scaleIn 0.5s ease-out;
+      }
+      .card {
+        animation: slideUp 0.5s ease-out;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: #f00;
+        animation: confetti-fall 3s linear infinite;
+      }
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(-100vh) rotate(0deg);
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hover-scale {
+        transition: transform 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex items-center justify-center p-4">
+    <div
+      class="card rounded-3xl shadow-2xl p-8 max-w-md w-full relative overflow-hidden"
+    >
+      <!-- Decorative elements -->
+      <div
+        class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full -mr-16 -mt-16 opacity-50"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-32 h-32 bg-green-100 rounded-full -ml-16 -mb-16 opacity-50"
+      ></div>
+
+      <div class="relative z-10">
+        <div class="flex justify-center mb-6">
+          <div
+            class="bg-gradient-to-br from-green-400 to-green-600 rounded-full p-5 success-icon shadow-lg"
+          >
+            <svg
+              class="w-10 h-10 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <h1 class="text-3xl font-bold text-center mb-3 gradient-text">
+          Pembayaran Berhasil!
+        </h1>
+        <p class="text-gray-600 mb-8 text-lg text-center">
+          Terima kasih! Transaksi kamu telah berhasil diproses.
+        </p>
+
+        <div
+          class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl text-left text-sm text-gray-700 mb-8 border border-gray-100 shadow-lg"
+        >
+          <div class="space-y-4">
+            <div class="flex justify-between items-center">
+              <span class="font-medium text-gray-600 flex items-center">
+                <i class="fas fa-receipt mr-2 text-blue-500"></i>
+                ID Transaksi
+              </span>
+              <span class="font-semibold text-gray-800">#INV123456</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-medium text-gray-600 flex items-center">
+                <i class="far fa-calendar-alt mr-2 text-blue-500"></i>
+                Tanggal
+              </span>
+              <span class="font-semibold text-gray-800">2 Juni 2025</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-medium text-gray-600 flex items-center">
+                <i class="fas fa-wallet mr-2 text-blue-500"></i>
+                Metode Pembayaran
+              </span>
+              <span class="font-semibold text-gray-800">E-Wallet (OVO)</span>
+            </div>
+            <div
+              class="flex justify-between items-center pt-4 border-t border-gray-200"
+            >
+              <span class="font-medium text-gray-600 flex items-center">
+                <i class="fas fa-money-bill-wave mr-2 text-green-500"></i>
+                Total Pembayaran
+              </span>
+              <span class="font-bold text-xl text-green-600">Rp125.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-4 justify-center">
+          <a
+            href="/pesanan"
+            class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            Lihat Pesanan
+          </a>
+          <a
+            href="index.html"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-xl transition duration-300 transform hover:scale-105 font-medium flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-home"></i>
+            Kembali ke Beranda
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Create confetti effect
+      function createConfetti() {
+        const colors = ["#f00", "#0f0", "#00f", "#ff0", "#f0f", "#0ff"];
+        for (let i = 0; i < 50; i++) {
+          const confetti = document.createElement("div");
+          confetti.className = "confetti";
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.animationDelay = Math.random() * 3 + "s";
+          document.body.appendChild(confetti);
+
+          // Remove confetti after animation
+          setTimeout(() => {
+            confetti.remove();
+          }, 3000);
+        }
+      }
+
+      // Trigger confetti on page load
+      window.addEventListener("load", createConfetti);
+    </script>
+  </body>
+</html>
